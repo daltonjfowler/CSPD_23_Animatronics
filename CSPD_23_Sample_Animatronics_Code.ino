@@ -52,21 +52,20 @@ void loop()
 
   delay(100);
 
-  if (inches >= 20) //if distance is greater than 10 inches
+  if (inches >= 20) //if distance is greater than or equal to 20 inches
   {
     motor.write(0);
-    digitalWrite(ledPin, LOW); //LED off, motor move
+    digitalWrite(ledPin, LOW); //LED off, motor move to 0 degrees
     
   }
-  if (inches < 20 && inches > 10) //if distance is greater than 10 inches
-  {
+  if (inches < 20 && inches > 10) //if distance is less than 20 inches & greater than 10 inches
     motor.write(90);
-    digitalWrite(ledPin, HIGH); //LED on, motor move
+    digitalWrite(ledPin, HIGH); //LED on, motor move to 90 degrees
   }
-  if (inches <= 10 ) //if distance is greater than 10 inches
+  if (inches <= 10 ) //if distance is less than or equal to 10 inches
   {
     motor.write(180);
-    digitalWrite(ledPin, LOW); //LED off, motor move
+    digitalWrite(ledPin, LOW); //LED off, motor move to 180 degrees
   }
 
 
